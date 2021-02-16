@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/',[MainContriller::class,'index']);
-Route::get('/categories',[MainContriller::class,'categories']);
-Route::get('/{category}',[MainContriller::class,'category']);
-Route::get('/mobile/{product?}',[MainContriller::class,'product']);
-
+Route::get('/', [MainContriller::class, 'index'])->name('index');
+Route::get('/categories', [MainContriller::class, 'categories'])->name('categories');
+Route::get('/{category}', [MainContriller::class, 'category'])->name('category');
+Route::get('/{mobile}/{product?}', [MainContriller::class, 'product'])->name('product');
+Route::get('/basket', [MainContriller::class, 'basket'])->name('basket');
+Route::get('/basket/place', [MainContriller::class, 'basketPlace'])->name('basket_place');

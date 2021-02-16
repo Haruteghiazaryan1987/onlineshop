@@ -18,8 +18,13 @@ class MainContriller extends Controller
         $category=Category::where('code',$code)->first();
         return view('category',compact('category'));
     }
-    public function product($product=null){
-        // dd($product);
+    public function product($categories,$product=null){
         return view('product',['products'=>$product]);
+    }
+    public function basket(){
+        return view('basket');
+    }
+    public function basketPlace(){
+        return view('order');
     }
 }
