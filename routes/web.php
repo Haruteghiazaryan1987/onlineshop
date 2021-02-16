@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainContriller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[MainContriller::class,'index']);
+Route::get('/categories',[MainContriller::class,'categories']);
+Route::get('/{category}',[MainContriller::class,'category']);
+Route::get('/mobile/{product?}',[MainContriller::class,'product']);
+
