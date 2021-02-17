@@ -5,7 +5,7 @@
 @section('content')
   <div class="starter-template">
     <h1>All products</h1>
-    <form method="GET" action="http://internet-shop.tmweb.ru">
+    {{-- <form method="GET" action="http://internet-shop.tmweb.ru">
       <div class="filters row">
         <div class="col-sm-6 col-md-3">
           <label for="price_from">Price from <input type="text" name="price_from" id="price_from" size="6" value="">
@@ -30,13 +30,15 @@
           <a href="http://internet-shop.tmweb.ru" class="btn btn-warning">Reset</a>
         </div>
       </div>
-    </form>
+    </form> --}}
     <div class="row">
 
-      @include('card')
-
+      @foreach ($products as $product)
+           @include('card',compact('product'))
+      @endforeach
+     
     </div>
-    <nav>
+    {{-- <nav>
       <ul class="pagination">
 
         <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
@@ -55,7 +57,7 @@
           <a class="page-link" href="?&amp;page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
         </li>
       </ul>
-    </nav>
+    </nav> --}}
 
   </div>
 @endsection
