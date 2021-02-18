@@ -25,6 +25,7 @@ class MainContriller extends Controller
     }
     public function product($categories, $product = null)
     {
+        dd($product);
         return view('product', ['products' => $product]);
     }
 }

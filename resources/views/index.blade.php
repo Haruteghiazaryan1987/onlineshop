@@ -1,11 +1,10 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('title', 'Main')
 
 @section('content')
-  <div class="starter-template">
-    <h1>All products</h1>
-    {{-- <form method="GET" action="http://internet-shop.tmweb.ru">
+  <h1>All products</h1>
+  {{-- <form method="GET" action="http://internet-shop.tmweb.ru">
       <div class="filters row">
         <div class="col-sm-6 col-md-3">
           <label for="price_from">Price from <input type="text" name="price_from" id="price_from" size="6" value="">
@@ -31,14 +30,14 @@
         </div>
       </div>
     </form> --}}
-    <div class="row">
+  <div class="row">
 
-      @foreach ($products as $product)
-           @include('card',compact('product'))
-      @endforeach
-     
-    </div>
-    {{-- <nav>
+    @foreach ($products as $product)
+      @include('layouts.card',compact('product'))
+    @endforeach
+
+  </div>
+  {{-- <nav>
       <ul class="pagination">
 
         <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
@@ -58,6 +57,4 @@
         </li>
       </ul>
     </nav> --}}
-
-  </div>
 @endsection
